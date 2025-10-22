@@ -96,33 +96,18 @@ with aba1:
 
 with aba2:
     cabecalho()
+
     bloco_fotos("Campanha de arrecadação de doações", "1.Campanha")
     bloco_fotos("Compra dos brinquedos", "2.Compra dos brinquedos")
     bloco_fotos("Troca dos brinquedos por estrelinhas", "3.Troca dos brinquedos por estrelinhas")
     bloco_fotos("Resultado da gincana", "4.Resultado da gincana")
     bloco_fotos("Organização e separação", "5.Organização dos brinquedos para entrega")
-    import os
-
-def encontrar_pasta(base_path, palavras_chave):
-    for nome in os.listdir(base_path):
-        if all(p.lower() in nome.lower() for p in palavras_chave):
-            st.info(f"📁 Pasta encontrada: {nome}")
-            return nome
-    st.warning(f"⚠️ Nenhuma pasta contendo {palavras_chave} foi encontrada em {base_path}.")
-    return None
-
-pasta_entrega = encontrar_pasta("imagens", ["entrega", "brinquedos"])
-
-if pasta_entrega:
-    bloco_fotos("Entrega às Instituições", f"imagens/{pasta_entrega}")
-else:
-    st.warning("⚠️ Nenhuma imagem encontrada para 'Entrega às Instituições'.")
-
-
+    bloco_fotos("Entrega às Instituições", "6.Entrega dos brinquedos para a Obra Social")
     
 
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
 
 
