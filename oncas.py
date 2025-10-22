@@ -101,8 +101,24 @@ with aba2:
     bloco_fotos("Troca dos brinquedos por estrelinhas", "3.Troca dos brinquedos por estrelinhas")
     bloco_fotos("Resultado da gincana", "4.Resultado da gincana")
     bloco_fotos("Organização e separação", "5.Organização dos brinquedos para entrega")
-    bloco_fotos("Entrega às Instituições", "6.Entrega dos brinquedos para a Obra Social Cristo Rei")
+    import os
+
+def encontrar_pasta(base_path, palavras_chave):
+    for nome in os.listdir(base_path):
+        if all(p.lower() in nome.lower() for p in palavras_chave):
+            return nome
+    return None
+
+pasta_entrega = encontrar_pasta("imagens", ["entrega", "brinquedos"])
+
+if pasta_entrega:
+    bloco_fotos("Entrega às Instituições", f"imagens/{pasta_entrega}")
+else:
+    st.warning("⚠️ Nenhuma pasta encontrada para 'Entrega às Instituições'. Verifique o nome da pasta.")
+
+    
 
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
