@@ -82,7 +82,9 @@ aba1, aba2, aba3 = st.tabs(["📖 Introdução", "🖼️ Fotos", "🧾 Notas Fi
 
 with aba1:
     cabecalho()
-    st.image("imagens/Logo onças.png", width=220)  # adiciona o logo no topo
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image("imagens/Logo onças.png", width=220)
     st.markdown("""
     <p style="text-align:justify;">
     A equipe <strong>As Onças Não Rugem à Toa</strong> participou com garra, alegria e muita solidariedade
@@ -109,6 +111,7 @@ with aba2:
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
 
 
 
