@@ -82,10 +82,15 @@ aba1, aba2, aba3 = st.tabs(["📖 Introdução", "🖼️ Fotos", "🧾 Notas Fi
 
 with aba1:
     cabecalho()
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.image("imagens/Logo onças.png", width=220)
-    st.markdown("""
+    st.markdown(
+    """
+    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+        <img src="https://raw.githubusercontent.com/millenasimoncelo/prestacao-oncas/main/imagens/Logo%20onças.png" width="220">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+   st.markdown("""
     <p style="text-align:justify;">
     A equipe <strong>As Onças Não Rugem à Toa</strong> participou com garra, alegria e muita solidariedade
     da Gincana Solidária da SIPAT 2025. Nosso rugido foi de amor, união e compromisso com o bem — e cada
@@ -111,6 +116,7 @@ with aba2:
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
 
 
 
