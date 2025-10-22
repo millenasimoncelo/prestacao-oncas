@@ -90,6 +90,8 @@ with aba1:
     """,
     unsafe_allow_html=True
 )
+
+)
    st.markdown("""
     <p style="text-align:justify;">
     A equipe <strong>As Onças Não Rugem à Toa</strong> participou com garra, alegria e muita solidariedade
@@ -116,6 +118,7 @@ with aba2:
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
 
 
 
