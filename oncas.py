@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ===== ESTILOS (sem moldura branca) =====
+# ===== ESTILOS =====
 st.markdown("""
 <style>
 .block-container { max-width: 1200px; }
@@ -31,10 +31,10 @@ h2, h3 { color: #d17b0f; font-weight: 700; }
   display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 10px;
 }
 .card-photo, .card-nf {
-  background: none;              /* 🔹 moldura branca removida */
+  background: none;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  padding: 0;                    /* 🔹 padding removido */
+  padding: 0;
   transition: transform .2s ease-in-out;
 }
 .card-photo:hover, .card-nf:hover { transform: scale(1.02); }
@@ -80,19 +80,21 @@ def bloco_fotos(titulo, subpasta, tipo="foto"):
 # ===== ABAS =====
 aba1, aba2, aba3 = st.tabs(["📖 Introdução", "🖼️ Fotos", "🧾 Notas Fiscais"])
 
+# ===== ABA 1 =====
 with aba1:
     cabecalho()
-    st.markdown(
-    """
-    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-        <img src="https://raw.githubusercontent.com/millenasimoncelo/prestacao-oncas/main/imagens/Logo%20onças.png" width="220">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
-)
-   st.markdown("""
+    # LOGO CENTRALIZADO
+    st.markdown(
+        """
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+            <img src="https://raw.githubusercontent.com/millenasimoncelo/prestacao-oncas/main/imagens/Logo%20onças.png" width="220">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("""
     <p style="text-align:justify;">
     A equipe <strong>As Onças Não Rugem à Toa</strong> participou com garra, alegria e muita solidariedade
     da Gincana Solidária da SIPAT 2025. Nosso rugido foi de amor, união e compromisso com o bem — e cada
@@ -104,21 +106,20 @@ with aba1:
     </p>
     """, unsafe_allow_html=True)
 
+# ===== ABA 2 =====
 with aba2:
     cabecalho()
-
     bloco_fotos("Campanha de arrecadação de doações", "1.Campanha")
     bloco_fotos("Compra dos brinquedos", "2.Compra dos brinquedos")
     bloco_fotos("Troca dos brinquedos por estrelinhas", "3.Troca dos brinquedos por estrelinhas")
     bloco_fotos("Resultado da gincana", "4.Resultado da gincana")
     bloco_fotos("Organização e separação", "5.Organização dos brinquedos para entrega")
     bloco_fotos("Entrega às Instituições", "6.Entrega dos brinquedos para a Obra Social")
-    
 
+# ===== ABA 3 =====
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
-
 
 
 
