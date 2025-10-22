@@ -106,7 +106,9 @@ with aba2:
 def encontrar_pasta(base_path, palavras_chave):
     for nome in os.listdir(base_path):
         if all(p.lower() in nome.lower() for p in palavras_chave):
+            st.info(f"📁 Pasta encontrada: {nome}")
             return nome
+    st.warning(f"⚠️ Nenhuma pasta contendo {palavras_chave} foi encontrada em {base_path}.")
     return None
 
 pasta_entrega = encontrar_pasta("imagens", ["entrega", "brinquedos"])
@@ -114,11 +116,13 @@ pasta_entrega = encontrar_pasta("imagens", ["entrega", "brinquedos"])
 if pasta_entrega:
     bloco_fotos("Entrega às Instituições", f"imagens/{pasta_entrega}")
 else:
-    st.warning("⚠️ Nenhuma pasta encontrada para 'Entrega às Instituições'. Verifique o nome da pasta.")
+    st.warning("⚠️ Nenhuma imagem encontrada para 'Entrega às Instituições'.")
+
 
     
 
 with aba3:
     cabecalho()
     bloco_fotos("Notas Fiscais", "7.Notas fiscais", tipo="nf")
+
 
